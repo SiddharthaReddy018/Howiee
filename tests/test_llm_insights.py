@@ -32,6 +32,7 @@ from __future__ import annotations
 import os
 import sys
 import types
+import json
 
 import pytest
 
@@ -186,44 +187,57 @@ def test_generate_causal_summary_falls_back_when_no_api_key(grounding_context):
 # §H.3 — mocked verification of call_llm's response parsing + error handling
 # (NOT a substitute for a real network-verified run; see module docstring)
 # ─────────────────────────────────────────────────────────────────────────────
-class _FakeBlock:
-    def __init__(self, type_, name=None, input_=None):
-        self.type = type_
+class _FakeFunction:
+    def __init__(self, name, arguments_dict):
         self.name = name
-        self.input = input_ or {}
+        self.arguments = json.dumps(arguments_dict)
+
+
+class _FakeToolCall:
+    def __init__(self, name, arguments_dict):
+        self.function = _FakeFunction(name, arguments_dict)
+
+
+class _FakeMessage:
+    def __init__(self, tool_calls):
+        self.tool_calls = tool_calls
+
+
+class _FakeChoice:
+    def __init__(self, tool_calls):
+        self.message = _FakeMessage(tool_calls)
 
 
 class _FakeResponse:
-    def __init__(self, content):
-        self.content = content
+    def __init__(self, tool_calls):
+        self.choices = [_FakeChoice(tool_calls)]
 
 
-def _install_fake_anthropic_module(monkeypatch, create_fn):
-    """`call_llm` does `import anthropic` INSIDE the function body, so we
+def _install_fake_groq_module(monkeypatch, create_fn):
+    """`call_llm` does `import groq` INSIDE the function body, so we
     monkeypatch sys.modules rather than an attribute on llm_insights."""
-    fake_messages = types.SimpleNamespace(create=create_fn)
-    fake_client = types.SimpleNamespace(messages=fake_messages)
+    fake_completions = types.SimpleNamespace(create=create_fn)
+    fake_chat = types.SimpleNamespace(completions=fake_completions)
+    fake_client = types.SimpleNamespace(chat=fake_chat)
 
-    fake_module = types.ModuleType("anthropic")
-    fake_module.Anthropic = lambda api_key: fake_client
-    monkeypatch.setitem(sys.modules, "anthropic", fake_module)
+    fake_module = types.ModuleType("groq")
+    fake_module.Groq = lambda api_key: fake_client
+    monkeypatch.setitem(sys.modules, "groq", fake_module)
 
 
 def test_call_llm_parses_tool_use_block_correctly(grounding_context, monkeypatch):
-    """A well-formed Anthropic tool-use response must be parsed into exactly
-    the dict the tool was called with -- the actual parsing logic
-    (`for block in resp.content: if block.type == "tool_use" ...`) exercised
-    against a realistic fake response shape."""
+    """A well-formed Groq tool-use response must be parsed into exactly
+    the dict the tool was called with."""
     expected_payload = {
         "summary": "Median forecast is 250,000.", "key_drivers": ["planned_future_daily_budget"],
         "risk_flags": ["none"], "confidence_note": "grounded",
     }
 
     def fake_create(**kwargs):
-        assert kwargs["tool_choice"] == {"type": "tool", "name": "emit_summary"}
-        return _FakeResponse([_FakeBlock("tool_use", name="emit_summary", input_=expected_payload)])
+        assert kwargs["tool_choice"] == {"type": "function", "function": {"name": "emit_summary"}}
+        return _FakeResponse([_FakeToolCall(name="emit_summary", arguments_dict=expected_payload)])
 
-    _install_fake_anthropic_module(monkeypatch, fake_create)
+    _install_fake_groq_module(monkeypatch, fake_create)
     result = L.call_llm(grounding_context, api_key="fake-key-for-test")
     assert result == expected_payload
 
@@ -231,12 +245,11 @@ def test_call_llm_parses_tool_use_block_correctly(grounding_context, monkeypatch
 def test_call_llm_returns_none_on_api_error(grounding_context, monkeypatch):
     """Network/auth/rate-limit errors must degrade to None (triggering the
     rule-based fallback upstream), never propagate as an uncaught
-    exception -- this is what actually makes the "no network at grading
-    time" resilience claim in the docs true."""
+    exception."""
     def fake_create(**kwargs):
         raise RuntimeError("simulated network failure")
 
-    _install_fake_anthropic_module(monkeypatch, fake_create)
+    _install_fake_groq_module(monkeypatch, fake_create)
     result = L.call_llm(grounding_context, api_key="fake-key-for-test")
     assert result is None
 
@@ -246,20 +259,19 @@ def test_call_llm_returns_none_without_api_key(grounding_context):
 
 
 def test_call_llm_end_to_end_fabrication_still_caught(grounding_context, monkeypatch):
-    """Combines both mocks: a fake Anthropic client that returns a
+    """Combines both mocks: a fake Groq client that returns a
     plausible-shaped but fabricated tool-use payload must still be rejected
     by generate_causal_summary's validation step, ending up on the
-    rule-based fallback -- the full pipeline, not just validate_llm_json in
-    isolation."""
+    rule-based fallback."""
     fabricated_payload = {
         "summary": "Revenue will reach 123456789 next month.",
         "key_drivers": ["invented driver"], "risk_flags": ["none"], "confidence_note": "trust me",
     }
 
     def fake_create(**kwargs):
-        return _FakeResponse([_FakeBlock("tool_use", name="emit_summary", input_=fabricated_payload)])
+        return _FakeResponse([_FakeToolCall(name="emit_summary", arguments_dict=fabricated_payload)])
 
-    _install_fake_anthropic_module(monkeypatch, fake_create)
+    _install_fake_groq_module(monkeypatch, fake_create)
     result = L.generate_causal_summary(grounding_context, api_key="fake-key-for-test")
     assert result["source"] == "rule_based_fallback"
 
