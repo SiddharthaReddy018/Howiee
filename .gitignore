@@ -1,0 +1,48 @@
+# =============================================================================
+# .gitignore — AIgnition 3.0 · NetElixir Revenue Forecasting
+# =============================================================================
+
+# ── Secrets ───────────────────────────────────────────────────────────────────
+.env
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+.python-version
+
+# ── Artefacts generated at runtime ───────────────────────────────────────────
+features.parquet
+output/features.parquet
+output/predictions.csv
+output/causal_summary.json
+.pytest_cache/
+tests/fixtures/
+
+# pickle/model.pkl MUST be committed — do NOT add pickle/ here
+# The trained model is required by run.sh at test time
+
+# ── macOS / editors ───────────────────────────────────────────────────────────
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── Logs ─────────────────────────────────────────────────────────────────────
+*.log
+catboost_info/

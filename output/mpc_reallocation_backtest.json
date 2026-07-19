@@ -1,0 +1,546 @@
+{
+  "backtest_start": "2026-03-07",
+  "horizon_days": 90,
+  "replan_every_days": 30,
+  "n_windows": 3,
+  "spend_execution_noise_std_frac": 0.05,
+  "mpc_avg_daily_revenue": 14026.446946024149,
+  "open_loop_avg_daily_revenue": 13317.898551752925,
+  "mpc_vs_open_loop_relative_lift": 0.05320271749464281,
+  "windows": [
+    {
+      "window_start": "2026-03-07",
+      "window_end": "2026-04-06",
+      "n_days": 30,
+      "mpc_realized_daily_revenue": 17035.413811571216,
+      "mpc_realized_daily_spend": 2438.228075265,
+      "open_loop_realized_daily_revenue": 16256.55814335861,
+      "open_loop_realized_daily_spend": 2304.829336774736,
+      "n_groups_with_fresh_curve_fit": 7,
+      "mpc_allocation": [
+        {
+          "channel": "meta",
+          "campaign_type": "unclassified",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "meta",
+          "campaign_type": "remarketing",
+          "daily_spend": 431.9447882975001
+        },
+        {
+          "channel": "meta",
+          "campaign_type": "prospecting",
+          "daily_spend": 408.5964213625001
+        },
+        {
+          "channel": "meta",
+          "campaign_type": "brand",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "google",
+          "campaign_type": "VIDEO",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "google",
+          "campaign_type": "SHOPPING",
+          "daily_spend": 81.71928427250002
+        },
+        {
+          "channel": "google",
+          "campaign_type": "SEARCH",
+          "daily_spend": 1389.2278326325004
+        },
+        {
+          "channel": "google",
+          "campaign_type": "PERFORMANCE_MAX",
+          "daily_spend": 23.348366935000005
+        },
+        {
+          "channel": "google",
+          "campaign_type": "DISPLAY",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "google",
+          "campaign_type": "DEMAND_GEN",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "bing",
+          "campaign_type": "Shopping",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "bing",
+          "campaign_type": "Search",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "bing",
+          "campaign_type": "PerformanceMax",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "bing",
+          "campaign_type": "Audience",
+          "daily_spend": 0.0
+        }
+      ],
+      "open_loop_allocation": [
+        {
+          "channel": "meta",
+          "campaign_type": "unclassified",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "meta",
+          "campaign_type": "remarketing",
+          "daily_spend": 431.9447882975001
+        },
+        {
+          "channel": "meta",
+          "campaign_type": "prospecting",
+          "daily_spend": 408.5964213625001
+        },
+        {
+          "channel": "meta",
+          "campaign_type": "brand",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "google",
+          "campaign_type": "VIDEO",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "google",
+          "campaign_type": "SHOPPING",
+          "daily_spend": 81.71928427250002
+        },
+        {
+          "channel": "google",
+          "campaign_type": "SEARCH",
+          "daily_spend": 1389.2278326325004
+        },
+        {
+          "channel": "google",
+          "campaign_type": "PERFORMANCE_MAX",
+          "daily_spend": 23.348366935000005
+        },
+        {
+          "channel": "google",
+          "campaign_type": "DISPLAY",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "google",
+          "campaign_type": "DEMAND_GEN",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "bing",
+          "campaign_type": "Shopping",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "bing",
+          "campaign_type": "Search",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "bing",
+          "campaign_type": "PerformanceMax",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "bing",
+          "campaign_type": "Audience",
+          "daily_spend": 0.0
+        }
+      ]
+    },
+    {
+      "window_start": "2026-04-06",
+      "window_end": "2026-05-06",
+      "n_days": 30,
+      "mpc_realized_daily_revenue": 11080.53682249934,
+      "mpc_realized_daily_spend": 2337.235211884556,
+      "open_loop_realized_daily_revenue": 11314.098378019587,
+      "open_loop_realized_daily_spend": 2491.802530952854,
+      "n_groups_with_fresh_curve_fit": 7,
+      "mpc_allocation": [
+        {
+          "channel": "meta",
+          "campaign_type": "unclassified",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "meta",
+          "campaign_type": "remarketing",
+          "daily_spend": 256.8320362850001
+        },
+        {
+          "channel": "meta",
+          "campaign_type": "prospecting",
+          "daily_spend": 420.2706048300001
+        },
+        {
+          "channel": "meta",
+          "campaign_type": "brand",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "google",
+          "campaign_type": "VIDEO",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "google",
+          "campaign_type": "SHOPPING",
+          "daily_spend": 163.43856854500004
+        },
+        {
+          "channel": "google",
+          "campaign_type": "SEARCH",
+          "daily_spend": 1447.5987499700002
+        },
+        {
+          "channel": "google",
+          "campaign_type": "PERFORMANCE_MAX",
+          "daily_spend": 46.69673387000001
+        },
+        {
+          "channel": "google",
+          "campaign_type": "DISPLAY",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "google",
+          "campaign_type": "DEMAND_GEN",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "bing",
+          "campaign_type": "Shopping",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "bing",
+          "campaign_type": "Search",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "bing",
+          "campaign_type": "PerformanceMax",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "bing",
+          "campaign_type": "Audience",
+          "daily_spend": 0.0
+        }
+      ],
+      "open_loop_allocation": [
+        {
+          "channel": "meta",
+          "campaign_type": "unclassified",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "meta",
+          "campaign_type": "remarketing",
+          "daily_spend": 431.9447882975001
+        },
+        {
+          "channel": "meta",
+          "campaign_type": "prospecting",
+          "daily_spend": 408.5964213625001
+        },
+        {
+          "channel": "meta",
+          "campaign_type": "brand",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "google",
+          "campaign_type": "VIDEO",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "google",
+          "campaign_type": "SHOPPING",
+          "daily_spend": 81.71928427250002
+        },
+        {
+          "channel": "google",
+          "campaign_type": "SEARCH",
+          "daily_spend": 1389.2278326325004
+        },
+        {
+          "channel": "google",
+          "campaign_type": "PERFORMANCE_MAX",
+          "daily_spend": 23.348366935000005
+        },
+        {
+          "channel": "google",
+          "campaign_type": "DISPLAY",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "google",
+          "campaign_type": "DEMAND_GEN",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "bing",
+          "campaign_type": "Shopping",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "bing",
+          "campaign_type": "Search",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "bing",
+          "campaign_type": "PerformanceMax",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "bing",
+          "campaign_type": "Audience",
+          "daily_spend": 0.0
+        }
+      ]
+    },
+    {
+      "window_start": "2026-05-06",
+      "window_end": "2026-06-05",
+      "n_days": 30,
+      "mpc_realized_daily_revenue": 13963.390204001895,
+      "mpc_realized_daily_spend": 2440.64301980817,
+      "open_loop_realized_daily_revenue": 12383.039133880577,
+      "open_loop_realized_daily_spend": 2319.858887023189,
+      "n_groups_with_fresh_curve_fit": 8,
+      "mpc_allocation": [
+        {
+          "channel": "meta",
+          "campaign_type": "unclassified",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "meta",
+          "campaign_type": "remarketing",
+          "daily_spend": 303.5287701550001
+        },
+        {
+          "channel": "meta",
+          "campaign_type": "prospecting",
+          "daily_spend": 420.2706048300001
+        },
+        {
+          "channel": "meta",
+          "campaign_type": "brand",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "google",
+          "campaign_type": "VIDEO",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "google",
+          "campaign_type": "SHOPPING",
+          "daily_spend": 128.41601814250004
+        },
+        {
+          "channel": "google",
+          "campaign_type": "SEARCH",
+          "daily_spend": 1470.9471169050003
+        },
+        {
+          "channel": "google",
+          "campaign_type": "PERFORMANCE_MAX",
+          "daily_spend": 11.674183467500002
+        },
+        {
+          "channel": "google",
+          "campaign_type": "DISPLAY",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "google",
+          "campaign_type": "DEMAND_GEN",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "bing",
+          "campaign_type": "Shopping",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "bing",
+          "campaign_type": "Search",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "bing",
+          "campaign_type": "PerformanceMax",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "bing",
+          "campaign_type": "Audience",
+          "daily_spend": 0.0
+        }
+      ],
+      "open_loop_allocation": [
+        {
+          "channel": "meta",
+          "campaign_type": "unclassified",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "meta",
+          "campaign_type": "remarketing",
+          "daily_spend": 431.9447882975001
+        },
+        {
+          "channel": "meta",
+          "campaign_type": "prospecting",
+          "daily_spend": 408.5964213625001
+        },
+        {
+          "channel": "meta",
+          "campaign_type": "brand",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "google",
+          "campaign_type": "VIDEO",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "google",
+          "campaign_type": "SHOPPING",
+          "daily_spend": 81.71928427250002
+        },
+        {
+          "channel": "google",
+          "campaign_type": "SEARCH",
+          "daily_spend": 1389.2278326325004
+        },
+        {
+          "channel": "google",
+          "campaign_type": "PERFORMANCE_MAX",
+          "daily_spend": 23.348366935000005
+        },
+        {
+          "channel": "google",
+          "campaign_type": "DISPLAY",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "google",
+          "campaign_type": "DEMAND_GEN",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "bing",
+          "campaign_type": "Shopping",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "bing",
+          "campaign_type": "Search",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "bing",
+          "campaign_type": "PerformanceMax",
+          "daily_spend": 0.0
+        },
+        {
+          "channel": "bing",
+          "campaign_type": "Audience",
+          "daily_spend": 0.0
+        }
+      ]
+    }
+  ],
+  "open_loop_allocation_used_throughout": [
+    {
+      "channel": "meta",
+      "campaign_type": "unclassified",
+      "daily_spend": 0.0
+    },
+    {
+      "channel": "meta",
+      "campaign_type": "remarketing",
+      "daily_spend": 431.9447882975001
+    },
+    {
+      "channel": "meta",
+      "campaign_type": "prospecting",
+      "daily_spend": 408.5964213625001
+    },
+    {
+      "channel": "meta",
+      "campaign_type": "brand",
+      "daily_spend": 0.0
+    },
+    {
+      "channel": "google",
+      "campaign_type": "VIDEO",
+      "daily_spend": 0.0
+    },
+    {
+      "channel": "google",
+      "campaign_type": "SHOPPING",
+      "daily_spend": 81.71928427250002
+    },
+    {
+      "channel": "google",
+      "campaign_type": "SEARCH",
+      "daily_spend": 1389.2278326325004
+    },
+    {
+      "channel": "google",
+      "campaign_type": "PERFORMANCE_MAX",
+      "daily_spend": 23.348366935000005
+    },
+    {
+      "channel": "google",
+      "campaign_type": "DISPLAY",
+      "daily_spend": 0.0
+    },
+    {
+      "channel": "google",
+      "campaign_type": "DEMAND_GEN",
+      "daily_spend": 0.0
+    },
+    {
+      "channel": "bing",
+      "campaign_type": "Shopping",
+      "daily_spend": 0.0
+    },
+    {
+      "channel": "bing",
+      "campaign_type": "Search",
+      "daily_spend": 0.0
+    },
+    {
+      "channel": "bing",
+      "campaign_type": "PerformanceMax",
+      "daily_spend": 0.0
+    },
+    {
+      "channel": "bing",
+      "campaign_type": "Audience",
+      "daily_spend": 0.0
+    }
+  ]
+}

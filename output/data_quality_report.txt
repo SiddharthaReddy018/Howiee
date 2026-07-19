@@ -1,0 +1,28 @@
+Validating data directory: ./data
+
+[schema_mapper] bing_campaign_stats.csv  (channel=bing)
+    rows=2,873  campaigns=28  date_range=(datetime.date(2024, 5, 25), datetime.date(2026, 6, 5))  revenue_confidence=direct
+    mapped (exact) : {'campaign_id': 'CampaignId', 'date': 'TimePeriod', 'revenue': 'Revenue', 'spend': 'Spend', 'clicks': 'Clicks', 'impressions': 'Impressions', 'conversions': 'Conversions', 'campaign_type': 'CampaignType', 'daily_budget': 'DailyBudget', 'campaign_name': 'CampaignName'}
+    ignored        : ['Unnamed: 0']
+    missing/optional (left NaN, not fabricated): ['reach', 'video_views']
+    campaign_type  : native  (unclassified=0)
+[schema_mapper] google_ads_campaign_stats.csv  (channel=google)
+    rows=19,272  campaigns=92  date_range=(datetime.date(2024, 1, 1), datetime.date(2026, 6, 4))  revenue_confidence=direct
+    mapped (exact) : {'campaign_id': 'campaign_id', 'date': 'segments_date', 'clicks': 'metrics_clicks', 'conversions': 'metrics_conversions', 'spend': 'metrics_cost_micros', 'impressions': 'metrics_impressions', 'video_views': 'metrics_video_views', 'revenue': 'metrics_conversions_value', 'campaign_type': 'campaign_advertising_channel_type', 'daily_budget': 'campaign_budget_amount', 'campaign_name': 'campaign_name'}
+    ignored        : ['Unnamed: 0']
+    missing/optional (left NaN, not fabricated): ['reach']
+    campaign_type  : native  (unclassified=0)
+[schema_mapper] meta_ads_campaign_stats.csv  (channel=meta)
+    rows=3,417  campaigns=16  date_range=(datetime.date(2024, 5, 23), datetime.date(2026, 6, 5))  revenue_confidence=proxy
+    mapped (exact) : {'campaign_id': 'campaign_id', 'date': 'date_start', 'reach': 'reach', 'spend': 'spend', 'clicks': 'clicks', 'impressions': 'impressions', 'conversions': 'conversion', 'daily_budget': 'daily_budget', 'campaign_name': 'campaign_name'}
+    fuzzy suggestions rejected (below threshold): [('cpc', 'revenue', 41.0), ('cpm', 'campaign_type', 46.7), ('ctr', 'video_views', 43.3)]
+    ignored        : ['Unnamed: 0', 'cpc', 'cpm', 'ctr']
+    missing/optional (left NaN, not fabricated): ['video_views', 'campaign_type']
+    campaign_type  : inferred  (unclassified=17)
+    WARN: Revenue forecast for this channel is conversion-count/value-derived; no direct revenue field was found in the source file.
+
+Pandera schema validation: PASSED
+
+Campaign consistency validation: PASSED
+
+Summary: 3 file(s) seen, 0 skipped, 25,562 canonical rows, 136 campaigns.

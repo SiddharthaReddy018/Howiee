@@ -1,0 +1,36 @@
+{
+  "windows": [
+    {
+      "window_start": "2026-03-07",
+      "window_end": "2026-04-06",
+      "n_days": 30,
+      "actual_daily_revenue": 11846.533849602,
+      "actual_daily_spend": 1668.9315172000001,
+      "open_loop_regret_daily_revenue": 4410.024293756611,
+      "mpc_regret_daily_revenue": 5188.879961969216
+    },
+    {
+      "window_start": "2026-04-06",
+      "window_end": "2026-05-06",
+      "n_days": 30,
+      "actual_daily_revenue": 12486.020691561633,
+      "actual_daily_spend": 2254.2901009666666,
+      "open_loop_regret_daily_revenue": -1171.9223135420452,
+      "mpc_regret_daily_revenue": -1405.4838690622928
+    },
+    {
+      "window_start": "2026-05-06",
+      "window_end": "2026-06-05",
+      "n_days": 30,
+      "actual_daily_revenue": 11774.827410234668,
+      "actual_daily_spend": 2346.0941531999997,
+      "open_loop_regret_daily_revenue": 608.2117236459089,
+      "mpc_regret_daily_revenue": 2188.562793767227
+    }
+  ],
+  "actual_avg_daily_revenue": 12035.793983799434,
+  "open_loop_avg_daily_revenue": 13317.898551752925,
+  "mpc_avg_daily_revenue": 14026.446946024149,
+  "open_loop_vs_actual_uplift_pct": 0.10652430323078343,
+  "mpc_vs_actual_uplift_pct": 0.1653944031365273
+}

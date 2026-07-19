@@ -1,0 +1,14 @@
+# This custom theme is the app's DEFAULT appearance — it does not disable
+# Streamlit's built-in light/dark switcher. Anyone using the app can still
+# open the "⋮" menu -> Settings -> Theme and pick "Light", "Dark", "Use
+# system setting", or this custom theme, natively, no extra CSS/JS needed.
+[theme]
+base = "dark"
+primaryColor = "#C98A2C"
+backgroundColor = "#16140F"
+secondaryBackgroundColor = "#201C16"
+textColor = "#EDE4D3"
+font = "sans serif"
+
+[server]
+headless = true

@@ -1,0 +1,131 @@
+{
+  "bing_campaign_stats.csv": {
+    "source": "bing_campaign_stats.csv",
+    "channel": "bing",
+    "mapped": {
+      "campaign_id": "CampaignId",
+      "date": "TimePeriod",
+      "revenue": "Revenue",
+      "spend": "Spend",
+      "clicks": "Clicks",
+      "impressions": "Impressions",
+      "conversions": "Conversions",
+      "campaign_type": "CampaignType",
+      "daily_budget": "DailyBudget",
+      "campaign_name": "CampaignName"
+    },
+    "fuzzy_mapped": {},
+    "fuzzy_rejected": [],
+    "ignored_columns": [
+      "Unnamed: 0"
+    ],
+    "missing_optional": [
+      "reach",
+      "video_views"
+    ],
+    "revenue_confidence": "direct",
+    "campaign_type_source": "native",
+    "campaign_type_unclassified_count": 0,
+    "n_rows": 2873,
+    "n_campaigns": 28,
+    "date_range": [
+      "2024-05-25",
+      "2026-06-05"
+    ],
+    "warnings": [],
+    "errors": []
+  },
+  "google_ads_campaign_stats.csv": {
+    "source": "google_ads_campaign_stats.csv",
+    "channel": "google",
+    "mapped": {
+      "campaign_id": "campaign_id",
+      "date": "segments_date",
+      "clicks": "metrics_clicks",
+      "conversions": "metrics_conversions",
+      "spend": "metrics_cost_micros",
+      "impressions": "metrics_impressions",
+      "video_views": "metrics_video_views",
+      "revenue": "metrics_conversions_value",
+      "campaign_type": "campaign_advertising_channel_type",
+      "daily_budget": "campaign_budget_amount",
+      "campaign_name": "campaign_name"
+    },
+    "fuzzy_mapped": {},
+    "fuzzy_rejected": [],
+    "ignored_columns": [
+      "Unnamed: 0"
+    ],
+    "missing_optional": [
+      "reach"
+    ],
+    "revenue_confidence": "direct",
+    "campaign_type_source": "native",
+    "campaign_type_unclassified_count": 0,
+    "n_rows": 19272,
+    "n_campaigns": 92,
+    "date_range": [
+      "2024-01-01",
+      "2026-06-04"
+    ],
+    "warnings": [],
+    "errors": []
+  },
+  "meta_ads_campaign_stats.csv": {
+    "source": "meta_ads_campaign_stats.csv",
+    "channel": "meta",
+    "mapped": {
+      "campaign_id": "campaign_id",
+      "date": "date_start",
+      "reach": "reach",
+      "spend": "spend",
+      "clicks": "clicks",
+      "impressions": "impressions",
+      "conversions": "conversion",
+      "daily_budget": "daily_budget",
+      "campaign_name": "campaign_name"
+    },
+    "fuzzy_mapped": {},
+    "fuzzy_rejected": [
+      [
+        "cpc",
+        "revenue",
+        41.0
+      ],
+      [
+        "cpm",
+        "campaign_type",
+        46.7
+      ],
+      [
+        "ctr",
+        "video_views",
+        43.3
+      ]
+    ],
+    "ignored_columns": [
+      "Unnamed: 0",
+      "cpc",
+      "cpm",
+      "ctr"
+    ],
+    "missing_optional": [
+      "video_views",
+      "campaign_type"
+    ],
+    "revenue_confidence": "proxy",
+    "campaign_type_source": "inferred",
+    "campaign_type_unclassified_count": 17,
+    "n_rows": 3417,
+    "n_campaigns": 16,
+    "date_range": [
+      "2024-05-23",
+      "2026-06-05"
+    ],
+    "warnings": [
+      "Revenue forecast for this channel is conversion-count/value-derived; no direct revenue field was found in the source file."
+    ],
+    "errors": []
+  },
+  "_campaign_consistency_issues": []
+}
