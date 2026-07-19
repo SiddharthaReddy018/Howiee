@@ -10,7 +10,7 @@ production -- nothing reimplemented.
 
 Usage:
     export ANTHROPIC_API_KEY=sk-ant-...
-    python src/verify_live_llm.py
+    python3 src/verify_live_llm.py
 
 Reuses the already-trained bundle + already-generated predictions.csv (run
 `run.sh` first if those don't exist yet) and calls the LLM exactly once, for
@@ -57,7 +57,7 @@ def main():
             "API KEY is not set in this environment.\n"
             "Export a real key first:\n\n"
             "    export GROQ_API_KEY=gsk_...\n"
-            "    python src/verify_live_llm.py\n\n"
+            "    python3 src/verify_live_llm.py\n\n"
             "(Script will now exit rather than gracefully falling back, so you don't "
             "mistake a fallback for a successful live run during verification.)"
         )

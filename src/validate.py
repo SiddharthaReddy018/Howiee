@@ -6,7 +6,7 @@ data directory and print the ingestion + Pandera validation report, without
 needing to run the full train/predict pipeline.
 
 Usage:
-    python validate.py --data-dir ./data
+    python3 src/validate.py --data-dir ./data
 """
 
 from __future__ import annotations

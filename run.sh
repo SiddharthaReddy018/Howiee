@@ -22,8 +22,8 @@ mkdir -p "$OUT_DIR"
 FEATURES_PATH="$OUT_DIR/features.parquet"
 
 # Resolve python binary for local testing compatibility
-PYTHON="python"
-command -v python  &>/dev/null || PYTHON="python3"
+PYTHON="python3"
+command -v python3 &>/dev/null || PYTHON="python"
 
 # 0. Data-quality / schema-robustness report (Section A) - standalone
 #    diagnostic, run first so a fundamentally unusable data directory

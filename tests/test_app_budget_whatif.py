@@ -13,7 +13,7 @@ execute `src/app.py` end-to-end against the repo's own `pickle/model.pkl` +
 `./data`, drive the real slider widget, and read the real rendered metric --
 this exercises the exact code path a user hits, not a reimplementation of it.
 
-Requires `pickle/model.pkl` to already exist (`python src/train.py` first).
+Requires `pickle/model.pkl` to already exist (`python3 src/train.py` first).
 """
 
 from __future__ import annotations

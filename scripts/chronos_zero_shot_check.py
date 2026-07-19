@@ -36,7 +36,7 @@ actual submission.
 Usage
 -----
     pip install chronos-forecasting          # pulls in torch; needs ~6GB free
-    python scripts/chronos_zero_shot_check.py --data-dir ./data
+    python3 scripts/chronos_zero_shot_check.py --data-dir ./data
 
 Prints a plain comparison table: naive-pace baseline WAPE vs. Chronos-2
 zero-shot WAPE vs. (if you paste in the number from your own reliability.json)

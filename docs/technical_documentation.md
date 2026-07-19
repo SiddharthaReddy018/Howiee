@@ -54,7 +54,7 @@ This version rebuilds the pipeline around five ideas:
 
 ## 2. Data reality (grounded facts used throughout this document)
 
-Computed directly from the three provided files (`python src/validate.py --data-dir ./data`):
+Computed directly from the three provided files (`python3 src/validate.py --data-dir ./data`):
 
 | Channel | Rows | Campaigns | Date range | Revenue field |
 |---|---:|---:|---|---|

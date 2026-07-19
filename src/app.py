@@ -399,7 +399,7 @@ with st.sidebar:
         output_dir = st.text_input("Output directory", value=os.path.join(REPO_ROOT, "output"))
 
     if not os.path.exists(model_path):
-        st.error(f"No trained model at {model_path}. Run `python src/train.py` first.")
+        st.error(f"No trained model at {model_path}. Run `python3 src/train.py` first.")
         st.stop()
 
     bundle = load_bundle(model_path)

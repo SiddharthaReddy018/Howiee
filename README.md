@@ -54,7 +54,7 @@ proxy; an MPC-style rolling-horizon budget-reallocation backtest (§9b); and
 four extended funnel features — CPM, CPA, `reach`, and Google's
 `video_views`, both previously ingested and then silently dropped
 (§4). Every number below was produced by a full, unreduced training run
-(`python src/train.py --data-dir ./data --model-out ./pickle/model.pkl`,
+(`python3 src/train.py --data-dir ./data --model-out ./pickle/model.pkl`,
 no dev-speed flags) — this is the true headline WAPE/coverage/ROAS state of
 the shipped `pickle/model.pkl`, not a reduced-settings verification pass.
 
@@ -65,7 +65,7 @@ live LLM narration, copy `.env.example` to `.env` and set the key, or
 `export ANTHROPIC_API_KEY=...` before running — `predict.py`/`run.sh` will
 pick it up automatically with no code changes. To confirm the live path is
 actually working (not just falling back) before a demo, run
-`python src/verify_live_llm.py` after exporting the key: it makes one real
+`python3 src/verify_live_llm.py` after exporting the key: it makes one real
 call and reports `source` (`llm` vs. `rule_based_fallback`), whether the
 grounding validator accepted it, and latency.
 

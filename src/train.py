@@ -13,7 +13,7 @@ canonical dataset -> out-of-fold predictions per horizon for hierarchical
 reconciliation (§E) -> everything serialized into a single model bundle.
 
 Usage:
-    python train.py --data-dir ./data --model-out ./pickle/model.pkl
+    python3 src/train.py --data-dir ./data --model-out ./pickle/model.pkl
 """
 
 from __future__ import annotations
